@@ -1,0 +1,17 @@
+{% extends "generator/base.html" %}
+{% block content %}
+<form action="" method="post">
+	{% csrf_token %}
+	{% for post in samples %}
+	<article class="media content-section">
+		  <div class="media-body">
+		    <p class="article-content">{{ post.output }}</p>
+		    	<input type="checkbox" name="box-{{ post.sample_id }}">
+				<label for="vehicle1">I Want This!</label><br>
+		  </div>
+	</article>
+	{% endfor %}
+<input type="submit">
+</form>
+{% endblock content %}
+

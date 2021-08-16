@@ -1,0 +1,15 @@
+{% extends "generator/base.html" %}
+{% block content %}
+	{% for post in samples %}
+	<article class="media content-section">
+		  <div class="media-body">
+		    <p class="article-content">{{ post.output }}</p>
+		  </div>
+	</article>
+	{% endfor %}
+	<form action="" method="post">
+		{% csrf_token %}
+		<input type="submit" value="Back To Generate">
+	</form>
+{% endblock content %}
+

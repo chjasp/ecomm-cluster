@@ -1,0 +1,11 @@
+{% extends "generator/base.html" %}
+{% block content %}
+	<form action="" method="post">
+		{% csrf_token %}
+		<div class="media-body">
+			Content description: {{form.input_2}}
+		</div>
+		<input type="submit">
+	</form>
+{% endblock content %}
+

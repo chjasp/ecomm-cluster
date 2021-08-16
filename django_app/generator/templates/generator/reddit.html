@@ -1,0 +1,20 @@
+{% extends "generator/base.html" %}
+{% block content %}
+	<form action="" method="post">
+		{% csrf_token %}
+		<div class="media-body">
+			Subreddit: {{form.subreddit}}
+		</div>
+		<div class="media-body">
+			Year: {{form.year}}
+		</div>
+		<div class="media-body">
+			Month: {{form.month}}
+		</div>
+		<div class="media-body">
+			Day: {{form.day}}
+		</div>
+		<input type="submit">
+	</form>
+{% endblock content %}
+
