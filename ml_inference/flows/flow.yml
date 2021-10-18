@@ -1,0 +1,15 @@
+jtype: Flow
+executors:
+  - name: crafter # Arbitrary name of the first executor
+    uses: jinahub://ImageNormalizer # Name of the class of the executor from executors.py
+    uses_with: # Define parameters for the constructor of the executor
+      resize_dim: 96
+  - name: encoder
+    timeout_ready: 600000
+    uses: jinahub+docker://BigTransferEncoder
+  - name: indexer
+    uses: jinahub://SimpleIndexer
+    # uses_metas: # universal arguments for all Executors
+    #   workspace: $JINA_WORKSPACE
+# curl --verbose --request POST -H 'Content-Type: application/json' 'http://localhost:52839/'-d '{"parameters": {"top_k": 1}, "mode": "search",  "data": ["data:image/png;base64,"]}'
+
